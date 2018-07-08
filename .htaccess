@@ -1,0 +1,31 @@
+RewriteEngine on
+
+Rewriterule login/aksi-validasi-user/(.*)/(.*)$ lib/controller/Login/LoginController.php?aksi=$1&id=$2
+Rewriterule login/aksi-validasi-user/(.*)$ lib/controller/Login/LoginController.php?aksi=$1
+Rewriterule login$ public/Login/Login.php [L] 
+
+RewriteRule administrator/administrator-aksi/(.*)/(.*)$ lib/Controller/Administrator/administratorController.php?aksi=$1&id=$2
+RewriteRule administrator/administrator-aksi/(.*)$ lib/Controller/Administrator/administratorController.php?aksi=$1
+RewriteRule administrator/(.*)/(.*)$ public/Administrator/administrator.php?menu=$1&id=$2
+RewriteRule administrator/(.*)$ public/Administrator/administrator.php?menu=$1 [L]
+
+RewriteRule sekretaris/sekretaris-aksi/(.*)/(.*)$ lib/Controller/Sekretaris/sekretarisController.php?aksi=$1&id=$2
+RewriteRule sekretaris/sekretaris-aksi/(.*)$ lib/Controller/Sekretaris/sekretarisController.php?aksi=$1
+RewriteRule sekretaris/(.*)/(.*)$ public/Sekretaris/sekretaris.php?menu=$1&id=$2
+RewriteRule sekretaris/(.*)$ public/Sekretaris/sekretaris.php?menu=$1 [L]
+
+RewriteRule pimpinan/pimpinan-aksi/(.*)/(.*)$ lib/Controller/Pimpinan/pimpinanController.php?aksi=$1&id=$2
+RewriteRule pimpinan/pimpinan-aksi/(.*)$ lib/Controller/Pimpinan/pimpinanController.php?aksi=$1
+RewriteRule pimpinan/(.*)/(.*)$ public/Pimpinan/pimpinan.php?menu=$1&id=$2
+RewriteRule pimpinan/(.*)$ public/Pimpinan/pimpinan.php?menu=$1 [L]
+
+
+RewriteRule staff/staff-aksi/(.*)/(.*)$ lib/Controller/Staff/staffController.php?aksi=$1&id=$2
+RewriteRule staff/staff-aksi/(.*)$ lib/Controller/Staff/staffController.php?aksi=$1
+RewriteRule staff/(.*)/(.*)$ public/Staff/staff.php?menu=$1&id=$2
+RewriteRule staff/(.*)$ public/Staff/staff.php?menu=$1 [L]
+
+RewriteRule download-surat-pdf/(.*)$ public/Administrator/print-surat-pdf.php?id=$1 [L]
+RewriteRule print-disposisi/(.*)$ public/Administrator/print-disposisi.php?id=$1 [L]
+RewriteRule print-laporan-pdf$ public/Administrator/print-laporan-pdf.php	 [L]
+RewriteRule print-laporan-xls$ public/Administrator/export-xls.php	 [L]
